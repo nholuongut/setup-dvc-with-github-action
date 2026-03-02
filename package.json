@@ -1,0 +1,60 @@
+{
+  "name": "@dvcorg/setup-dvc",
+  "version": "2.0.0",
+  "author": {
+    "name": "DVC",
+    "url": "https://github.com/nholuongut/setup-dvc-with-github-action"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nholuongut/setup-dvc-with-github-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nholuongut/setup-dvc-with-github-action/issues"
+  },
+  "keywords": [
+    "dvc",
+    "data version control",
+    "github action",
+    "github actions"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "type": "module",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "lintfix": "eslint --fix ./",
+    "lint": "eslint ./",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --passWithNoTests",
+    "do_snapshots": "node --experimental-vm-modules node_modules/jest/bin/jest.js --updateSnapshot",
+    "build": "rollup --config rollup.config.js",
+    "all": "npm run lintfix && npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "jest": "^30.2.0",
+    "neostandard": "^0.12.2",
+    "prettier": "^3.7.1",
+    "rollup": "^4.59.0"
+  }
+}
